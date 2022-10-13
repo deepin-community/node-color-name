@@ -1,0 +1,10 @@
+version=4
+opts=\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-color-name-$1.tar.gz/ \
+ https://github.com/colorjs/color-name/tags .*/archive/v?([\d\.]+).tar.gz group
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-color-name,ctype=nodejs,pgpmode=none" \
+ https://registry.npmjs.org/@types/color-name https://registry.npmjs.org/@types/color-name/-/color-name-([\d\.]+)@ARCHIVE_EXT@ group
